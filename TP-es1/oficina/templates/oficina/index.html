@@ -1,0 +1,67 @@
+{% extends 'oficina/main.html' %}
+
+{% load static %}
+
+{% block conteudo %}
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Pagina Inicial</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Nome</h5>
+
+                <p class="card-text">
+                      {% if user.is_authenticated %}
+                      <p>Seu nome é: {{user.username}}</p>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="m-0">Teste</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title">Isso aqui é um teste</h6>
+
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque risus. </p>
+
+              </div>
+            </div>
+          </div>
+          <!-- /.col-md-6 -->
+          {% else %}
+            <p>Você não está logado</p>
+          {% endif %}
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{% endblock conteudo %}
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+</head>
+<body>
+
+<h1>Pagina de registro</h1>
+    <form method="post" action="{% url 'register' %}">
+        {% csrf_token %}
+
+        {% if form.errors %}
+        <p>Há erros neste formulário</p>
+        {% endif %}
+
+        {{ form }}
+        <a class="btn btn-bloc btn-danger" type="button" href="{% url 'create_cliente' %}">Excluir</a>
+
+    </form>
+</body>
+</html>
